@@ -1,0 +1,29 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>
+      Home
+    </ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content class="home">
+  <ion-card>
+    <ion-card-content>
+      <button (click)="takePicture()">Capture Image</button>
+      <button (click)="authenticate()">Authenticate</button>
+      <button (click)="sendPicture()">Analyze Image</button>
+      <button (click)="sendAttachment()">Store as Attachment</button>
+      <button (click)="resize()">Resize</button>
+      Capture Quality: <input type="tel" [(ngModel)]="quality" />
+      Width: <input type="tel" [(ngModel)]="width" />
+      Height: <input type="tel" [(ngModel)]="height" />
+      Latest Picture:
+      <ion-label>{{assetClass}}</ion-label>
+      <ion-label>{{description}}</ion-label>
+      <ion-label>{{mutcd}}</ion-label>
+      <ion-label>{{text}}</ion-label>
+      <ion-label>{{error}}</ion-label>
+      <img [src]="imageData" *ngIf="base64Image" />
+    </ion-card-content>
+  </ion-card>
+</ion-content>
